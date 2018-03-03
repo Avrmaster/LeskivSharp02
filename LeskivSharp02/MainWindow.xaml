@@ -73,7 +73,7 @@
                             SelectedDate="{Binding BirthDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                             Text="{Binding BirthDateText, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
                     </Viewbox>
-                    <Button Grid.Row="8" Grid.Column="0" Margin="20" Command="{Binding RegisterCommand}">
+                    <Button Grid.Row="8" Grid.Column="0" Margin="20" Command="{Binding RegisterCommand}" IsEnabled="{Binding }">
                         <TextBlock FontSize="40">
                             <Bold>Proceed</Bold>
                         </TextBlock>
