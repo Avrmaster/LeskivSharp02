@@ -2,8 +2,7 @@
 
 namespace LeskivSharp02
 {
- 
-    class Person
+    public class Person
     {
         internal string Name { get; }
         internal string Surname { get; }

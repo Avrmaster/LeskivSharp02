@@ -3,9 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:LeskivSharp02"
         mc:Ignorable="d"
-        Title="PersonInfoWindow" Height="350" Width="525">
+        Title="PersonInfoWindow" Height="640" Width="548">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush>

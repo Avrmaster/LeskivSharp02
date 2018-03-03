@@ -10,7 +10,7 @@ namespace LeskivSharp02
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new PersonRegisterViewModel();
+            DataContext = new PersonRegisterViewModel(this);
         }
     }
 }
