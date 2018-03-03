@@ -10,13 +10,13 @@ namespace LeskivSharp02
         private readonly Person _person;
 
         public string Name => $"Your name:\n{_person.Name}";
-        public string Surname => _person.Surname;
-        public string Email => _person.Email;
-        public string BirthDate => _person.Birthday.ToString();
-        public string SunSign => _person.SunSign;
-        public string IsAdult => _person.IsAdult.ToString();
-        public string ChineseSign => _person.ChineseSign;
-        public string IsBirthday => _person.IsBirthday.ToString();
+        public string Surname => $"Your surname:\n{_person.Surname}";
+        public string Email => $"Your email:\n{_person.Email}";
+        public string BirthDate => $"Your birthday:\n{_person.Birthday.ToShortDateString()}";
+        public string SunSign => $"Your sun sign:\n{_person.SunSign}";
+        public string ChineseSign => $"Your chinese sign:\n{_person.ChineseSign}";
+        public string IsBirthday => $"Today is {(_person.IsBirthday ? "" : "not ")}your birthday";
+        public string IsAdult => $"You are {(_person.IsAdult? "" : "not ")}adult";
 
         public PersonInfoViewModel(Person person)
         {

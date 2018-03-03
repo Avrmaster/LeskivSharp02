@@ -13,9 +13,9 @@ namespace LeskivSharp02
     {
         private readonly Window _parentWindow;
 
-        private string _name = "Your name";
-        private string _surname = "Your surname";
-        private string _email = "Your email";
+        private string _name;
+        private string _surname;
+        private string _email;
         private DateTime _birthDate = DateTime.Today;
         private RelayCommand _signInCommand;
 
