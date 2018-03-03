@@ -71,6 +71,9 @@ namespace LeskivSharp02
             }
         }
 
+        //this is used to keep track of empty birthday field
+        public string BirthDateText { get; set; }
+
         public RelayCommand RegisterCommand
         {
             get
@@ -79,7 +82,7 @@ namespace LeskivSharp02
                            o => !string.IsNullOrWhiteSpace(_name) &&
                                 !string.IsNullOrWhiteSpace(_surname) &&
                                 !string.IsNullOrWhiteSpace(_email) &&
-                                _birthDate != null
+                                !string.IsNullOrWhiteSpace(BirthDateText)
                                 ));
             }
         }

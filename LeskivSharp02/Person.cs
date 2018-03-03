@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Windows.Media.Media3D;
 
 namespace LeskivSharp02
 {
@@ -62,7 +64,9 @@ namespace LeskivSharp02
                 throw new WrongSurnameException($"Surname {surname} is too small!");
             }
 
-            if (!email.Contains("@") || email.Length < 3)
+            if (email.Length < 3 || email.Count(f => f == '@') != 1 ||
+                (email.IndexOf("@", StringComparison.Ordinal) ==  email.Length-1) ||
+                (email.IndexOf("@", StringComparison.Ordinal) == 0))
             {
                 throw new WrongEmailException(email);
             }

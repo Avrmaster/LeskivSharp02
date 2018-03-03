@@ -69,8 +69,9 @@
                     <Viewbox Grid.Row="7" Grid.Column="0"
                              HorizontalAlignment="Center" VerticalAlignment="Center">
                         <DatePicker
-                            FirstDayOfWeek="Monday"
-                            SelectedDate="{Binding BirthDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            FirstDayOfWeek="Monday" Name="BirthDatePicker"
+                            SelectedDate="{Binding BirthDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            Text="{Binding BirthDateText, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
                     </Viewbox>
                     <Button Grid.Row="8" Grid.Column="0" Margin="20" Command="{Binding RegisterCommand}">
                         <TextBlock FontSize="40">
