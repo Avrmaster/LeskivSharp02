@@ -2,39 +2,96 @@
 
 namespace LeskivSharp02
 {
+
+    public class PersonCreationException : Exception
+    {
+        public PersonCreationException(string message)
+            : base(message)
+        {
+        }
+    }
+
+    public class WrongNameException : PersonCreationException
+    {
+        public WrongNameException(string message)
+            : base(message)
+        {
+        }
+    }
+
+    public class WrongSurnameException : PersonCreationException
+    {
+        public WrongSurnameException(string message)
+            : base(message)
+        {
+        }
+    }
+
+    public class WrongEmailException : PersonCreationException
+    {
+        public WrongEmailException(string givenEmail)
+            : base($"Email {givenEmail} is not valid!")
+        {
+        }
+    }
+
+    public class WrongBirthdayException : PersonCreationException
+    {
+        public WrongBirthdayException(DateTime birthday)
+            : base($"Birthday {birthday.ToShortDateString()} is not valid!")
+        {
+        }
+    }
+
     public class Person
     {
-        internal string Name { get; }
-        internal string Surname { get; }
-        internal string Email { get; }
-        internal DateTime Birthday { get; }
+        internal readonly string Name;
+        internal readonly string Surname;
+        internal readonly string Email;
+        internal readonly DateTime Birthday;
 
         public Person(string name, string surname, string email, DateTime birthday)
         {
+            if (name.Length < 2)
+            {
+                throw new WrongNameException($"Name {name} is too small!");
+            }
+
+            if (surname.Length < 2)
+            {
+                throw new WrongSurnameException($"Surname {surname} is too small!");
+            }
+
+            if (!email.Contains("@") || email.Length < 3)
+            {
+                throw new WrongEmailException(email);
+            }
+
+            var yearsDif = DateTime.Today.YearsPassedCnt(birthday);
+            if (yearsDif < 0 || yearsDif > 135)
+            {
+                throw new WrongBirthdayException(birthday);
+            }
+
             Name = name;
             Surname = surname;
             Email = email;
             Birthday = birthday;
         }
 
-        public Person(string name, string surname, string email)
+        public Person(string name, string surname, string email) : this(name, surname, email, DateTime.Today)
         {
-            Name = name;
-            Surname = surname;
-            Email = email;
         }
 
-        public Person(string name, string surname, DateTime birthday)
+        public Person(string name, string surname, DateTime birthday) : this(name, surname, "not specified", birthday)
         {
-            Name = name;
-            Surname = surname;
-            Birthday = birthday;
         }
 
         public bool IsAdult => DateTime.Today.YearsPassedCnt(Birthday) >= 18;
         public bool IsBirthday => DateTime.Today.DayOfYear == Birthday.DayOfYear;
 
-        public string ChineseSign => ChineseZodiaсs[(Birthday.Year + 8) % 12];        
+        public string ChineseSign => ChineseZodiaсs[(Birthday.Year + 8) % 12];
+
         public string SunSign
         {
             get
@@ -43,7 +100,7 @@ namespace LeskivSharp02
                 int westZodiacNum;
                 switch (Birthday.Month)
                 {
-                    case 1:  //January
+                    case 1: //January
                         westZodiacNum = day <= 20 ? 9 : 10;
                         break;
                     case 2: //February
@@ -83,11 +140,13 @@ namespace LeskivSharp02
                         westZodiacNum = 0;
                         break;
                 }
+
                 return WesternZodiaсs[westZodiacNum];
             }
         }
 
-        private static readonly string[] WesternZodiaсs = {
+        private static readonly string[] WesternZodiaсs =
+        {
             "Ram",
             "Bull",
             "Twins",
@@ -102,7 +161,8 @@ namespace LeskivSharp02
             "Fish"
         };
 
-        private static readonly string[] ChineseZodiaсs = {
+        private static readonly string[] ChineseZodiaсs =
+        {
             "Rat",
             "Ox",
             "Tiger",

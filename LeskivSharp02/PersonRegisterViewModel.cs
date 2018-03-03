@@ -79,8 +79,7 @@ namespace LeskivSharp02
                            o => !string.IsNullOrWhiteSpace(_name) &&
                                 !string.IsNullOrWhiteSpace(_surname) &&
                                 !string.IsNullOrWhiteSpace(_email) &&
-                                DateTime.Today.YearsPassedCnt(_birthDate) < 135 &&
-                                DateTime.Today.YearsPassedCnt(_birthDate) >= 0
+                                _birthDate != null
                                 ));
             }
         }
@@ -88,12 +87,24 @@ namespace LeskivSharp02
         private async void RegisterImpl(object o)
         {
             Person person = null;
+            //TODO block "proceed" button here
+
             await Task.Run((() =>
             {
-                person = new Person(_name, _surname, _email, _birthDate);
+                try
+                {
+                    person = new Person(_name, _surname, _email, _birthDate);
+                }
+                catch (PersonCreationException e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+                
                 //save to database here :)
             }));
-            
+            if (person == null)
+                return;
+
             PersonInfoWindow personInfoWindow = new PersonInfoWindow(person);
 
             _parentWindow.Hide();
