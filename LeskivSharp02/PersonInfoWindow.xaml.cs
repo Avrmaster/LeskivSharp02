@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 
 namespace LeskivSharp02
 {
@@ -12,5 +13,13 @@ namespace LeskivSharp02
             InitializeComponent();
             DataContext = new PersonInfoViewModel(person);
         }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            Application.Current.Shutdown();
+        }
+
     }
+
 }
