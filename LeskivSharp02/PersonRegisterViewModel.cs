@@ -1,8 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Globalization;
 using System.Runtime.CompilerServices;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using LeskivSharp02.Annotations;
@@ -94,7 +92,6 @@ namespace LeskivSharp02
             {
                 person = new Person(_name, _surname, _email, _birthDate);
                 //save to database here :)
-                Thread.Sleep(5000);
             }));
             
             PersonInfoWindow personInfoWindow = new PersonInfoWindow(person);

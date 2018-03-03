@@ -29,19 +29,16 @@
             </Grid.RowDefinitions>
             <TextBlock Grid.Row ="0" Grid.Column="0" Foreground="AliceBlue"
                        TextWrapping="Wrap" Background="#15ffffff" FontStyle="Italic"
-                       TextAlignment="Center" FontSize="16" Margin="10" Text="{Binding Age, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                       TextAlignment="Center" FontSize="16" Margin="10" Text="{Binding Name, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
             <TextBlock Grid.Row ="1" Grid.Column="0" Foreground="AliceBlue" 
                        TextWrapping="Wrap" Background="#15ffffff" FontStyle="Italic"
-                       TextAlignment="Center" FontSize="16" Margin="10" Text="{Binding WestZodiac, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                       TextAlignment="Center" FontSize="16" Margin="10" Text="{Binding Surname, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
             <TextBlock Grid.Row ="2" Grid.Column="0" Foreground="AliceBlue"
                        TextWrapping="Wrap" Background="#15ffffff" FontStyle="Italic"
-                       TextAlignment="Center" FontSize="16" Margin="10" Text="{Binding ChineseZodiac, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBlock Grid.Row ="2" Grid.Column="0" Foreground="AliceBlue"
-                       TextWrapping="Wrap" Background="#15ffffff" FontStyle="Italic"
-                       TextAlignment="Center" FontSize="16" Margin="10" Text="{Binding ChineseZodiac, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                       TextAlignment="Center" FontSize="16" Margin="10" Text="{Binding Email, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
             <TextBlock Grid.Row ="3" Grid.Column="0" Foreground="AliceBlue"
                        TextWrapping="Wrap" Background="#15ffffff" FontStyle="Italic"
-                       TextAlignment="Center" FontSize="16" Margin="10" Text="{Binding ChineseZodiac, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                       TextAlignment="Center" FontSize="16" Margin="10" Text="{Binding BirthDate, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
         <Grid Grid.Row="0" Grid.Column="2" Margin="0">
             <Grid.RowDefinitions>
@@ -52,19 +49,16 @@
             </Grid.RowDefinitions>
             <TextBlock Grid.Row ="0" Grid.Column="0" Foreground="AliceBlue"
                        TextWrapping="Wrap" Background="#15ffffff" FontStyle="Italic"
-                       TextAlignment="Center" FontSize="16" Margin="10" Text="{Binding Age, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                       TextAlignment="Center" FontSize="16" Margin="10" Text="{Binding IsAdult, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
             <TextBlock Grid.Row ="1" Grid.Column="0" Foreground="AliceBlue" 
                        TextWrapping="Wrap" Background="#15ffffff" FontStyle="Italic"
-                       TextAlignment="Center" FontSize="16" Margin="10" Text="{Binding WestZodiac, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                       TextAlignment="Center" FontSize="16" Margin="10" Text="{Binding SunSign, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
             <TextBlock Grid.Row ="2" Grid.Column="0" Foreground="AliceBlue"
                        TextWrapping="Wrap" Background="#15ffffff" FontStyle="Italic"
-                       TextAlignment="Center" FontSize="16" Margin="10" Text="{Binding ChineseZodiac, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBlock Grid.Row ="2" Grid.Column="0" Foreground="AliceBlue"
-                       TextWrapping="Wrap" Background="#15ffffff" FontStyle="Italic"
-                       TextAlignment="Center" FontSize="16" Margin="10" Text="{Binding ChineseZodiac, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                       TextAlignment="Center" FontSize="16" Margin="10" Text="{Binding ChineseSign, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
             <TextBlock Grid.Row ="3" Grid.Column="0" Foreground="AliceBlue"
                        TextWrapping="Wrap" Background="#15ffffff" FontStyle="Italic"
-                       TextAlignment="Center" FontSize="16" Margin="10" Text="{Binding ChineseZodiac, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                       TextAlignment="Center" FontSize="16" Margin="10" Text="{Binding IsBirthday, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
     </Grid>
 </Window>
